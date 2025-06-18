@@ -1,5 +1,6 @@
+
 import {
-  StorageDriver
+  StorageConfig
 } from '@ionic/storage';
 import {
   CapacitorSQLite,
@@ -7,8 +8,8 @@ import {
   SQLiteDBConnection
 } from '@capacitor-community/sqlite';
 
-export class SQLiteDriver implements StorageDriver {
-  public readonly _driver = 'sqlite';
+export class SQLiteDriver {
+  public readonly _driver = 'capacitorSQLiteDriver';
   private db: SQLiteDBConnection | null = null;
   private sqlite: SQLiteConnection;
 
@@ -16,12 +17,29 @@ export class SQLiteDriver implements StorageDriver {
     this.sqlite = new SQLiteConnection(CapacitorSQLite);
   }
 
-  async _initStorage(_options?: any): Promise<void> {
-    if (!(await this.sqlite.isAvailable())) {
-      throw new Error('SQLite not available');
+  async _initStorage(_options: StorageConfig): Promise<void> {
+    // Configuration Check
+    if (_options.name === undefined) {
+        throw new Error('Undefined name in storage configuration')
+    }    
+    if (_options.version === undefined) {
+        throw new Error('Undefined version in storage configuration')
     }
 
-    this.db = await this.sqlite.createConnection('ionic-storage', false, 'no-encryption', 1);
+    // Check for connection
+    if (!(await this.sqlite.isConnection(_options.name, false))) {
+        try {
+            this.db = await this.sqlite.createConnection(_options.name, false, 'no-encryption', _options.version, false);
+        }
+        catch {
+            throw new Error('SQLite not available');
+        }      
+    }
+
+    if (this.db === null) {
+        throw new Error('Unable to create connection with database')
+    }
+
     await this.db.open();
 
     await this.db.execute(`

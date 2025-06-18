@@ -1,6 +1,6 @@
 # Ionic Storage Capacitor SQLite Driver
 
-A custom Ionic Storage driver using `@capacitor-community/sqlite`. Designed to be a drop in replacement for `localforage-cordovasqlitedriver`.
+A custom Ionic Storage driver using [@capacitor-community/sqlite](https://github.com/capacitor-community/sqlite). Designed to be a drop in replacement for [localforage-cordovasqlitedriver](https://github.com/thgreasi/localForage-cordovaSQLiteDriver).
 
 ## Install
 
