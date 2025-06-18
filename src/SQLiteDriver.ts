@@ -82,6 +82,11 @@ export class SQLiteDriver {
     return result?.values?.map((i) => i.key) ?? [];
   }
 
+  async key(n: number): Promise<string | null> {
+    const keys = await this.keys();
+    return keys[n] ?? null;
+  }
+
   async iterate<T = any>(
     callback: (value: T, key: string, iterationNumber: number) => any
   ): Promise<void> {
