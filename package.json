@@ -1,6 +1,6 @@
 {
   "name": "@derme302/ionic-storage-capacitorsqlitedriver",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom Ionic Storage driver using @capacitor-community/sqlite",
   "main": "dist/SQLiteDriver.js",
   "types": "dist/SQLiteDriver.d.ts",
@@ -10,13 +10,13 @@
   "author": "derme302",
   "license": "MIT",
   "dependencies": {
-    "@capacitor-community/sqlite": "^5.0.0",
-    "@ionic/storage": "^3.0.6"
   },
   "devDependencies": {
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "@capacitor/core": "^5.0.0 || ^6.0.0 || ^7.0.0"
+    "@capacitor/core": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "@capacitor-community/sqlite": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "@ionic/storage": "^3.0.0 || ^4.0.0"
   }
 }
