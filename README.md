@@ -2,7 +2,7 @@
 
 A custom Ionic Storage driver using [@capacitor-community/sqlite](https://github.com/capacitor-community/sqlite). Designed to be a drop in replacement for [localforage-cordovasqlitedriver](https://github.com/thgreasi/localForage-cordovaSQLiteDriver).
 
-## Install
+## Install and Use
 
 ```bash
 npm install @yderme302/ionic-storage-capacitorsqlitedriver
@@ -23,7 +23,7 @@ Then use `Storage` as usual.
 
 ---
 
-## 🛠 6. Build the Package
+## 🛠 Build the Package
 
 ```bash
 npm install
