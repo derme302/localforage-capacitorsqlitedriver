@@ -9,13 +9,13 @@ npm install @derme302/ionic-storage-capacitorsqlitedriver
 ```
 
 ```ts
-import { SQLiteDriver } from '@derme302/ionic-storage-capacitorsqlitedriver';
+import { CAPACITOR_SQLITE_DRIVER } from '@derme302/ionic-storage-capacitorsqlitedriver';
 
 bootstrapApplication(AppComponent, {
   providers: [
     {
     importProvidersFrom(IonicStorageModule.forRoot({
-      driverOrder: [SQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage]
+      driverOrder: [CAPACITOR_SQLITE_DRIVER, Drivers.IndexedDB, Drivers.LocalStorage]
     }))
 });
 ```

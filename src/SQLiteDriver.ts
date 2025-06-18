@@ -8,8 +8,10 @@ import {
   SQLiteDBConnection
 } from '@capacitor-community/sqlite';
 
+export const CAPACITOR_SQLITE_DRIVER = 'capacitorSQLiteDriver';
+
 export class SQLiteDriver {
-  public readonly _driver = 'capacitorSQLiteDriver';
+  public readonly _driver = CAPACITOR_SQLITE_DRIVER;
   private db: SQLiteDBConnection | null = null;
   private sqlite: SQLiteConnection;
 
