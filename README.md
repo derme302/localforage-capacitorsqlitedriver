@@ -5,7 +5,7 @@ A custom Ionic Storage driver using [@capacitor-community/sqlite](https://github
 ## Install and Use
 
 ```bash
-npm install @yderme302/ionic-storage-capacitorsqlitedriver
+npm install @derme302/ionic-storage-capacitorsqlitedriver
 ```
 
 ```ts
@@ -15,11 +15,32 @@ bootstrapApplication(AppComponent, {
   providers: [
     {
     importProvidersFrom(IonicStorageModule.forRoot({
-      driverOrder: [SQLiteDriver, Drivers.IndexedDB, Drivers.LocalStorage]
+      driverOrder: [SQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage]
     }))
 });
 ```
 Then use `Storage` as usual.
+
+```ts
+import { Storage } from '@ionic/storage-angular';
+import { SQLiteDriver } from '@derme302/ionic-storage-capacitorsqlitedriver';
+
+export class StorageService {
+  public isReady: boolean = false;
+  private _storage: Storage | null = null;
+
+  constructor(private storage: Storage) {
+    this.init();
+  }
+
+  async init() {
+    await this.storage.defineDriver(SQLiteDriver);
+    const storage = await this.storage.create();
+    this._storage = storage;
+    this.isReady = true;
+  }
+}
+```
 
 ---
 
