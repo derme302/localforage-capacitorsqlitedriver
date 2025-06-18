@@ -34,7 +34,7 @@ export class StorageService {
   }
 
   async init() {
-    await this.storage.defineDriver(SQLiteDriver);
+    await this.storage.defineDriver(new SQLiteDriver());
     const storage = await this.storage.create();
     this._storage = storage;
     this.isReady = true;
