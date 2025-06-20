@@ -1,15 +1,15 @@
-# Ionic Storage Capacitor SQLite Driver
+# localForage Capacitor SQLite Driver
 
-A custom Ionic Storage driver using [@capacitor-community/sqlite](https://github.com/capacitor-community/sqlite). Designed to be a drop in replacement for [localforage-cordovasqlitedriver](https://github.com/thgreasi/localForage-cordovaSQLiteDriver).
+A custom localForage driver using [@capacitor-community/sqlite](https://github.com/capacitor-community/sqlite) for Ionic Storage. Designed to be a drop in replacement for [localforage-cordovasqlitedriver](https://github.com/thgreasi/localForage-cordovaSQLiteDriver).
 
 ## Install and Use
 
 ```bash
-npm install @derme302/ionic-storage-capacitorsqlitedriver
+npm install @derme302/localforage-capacitorsqlitedriver
 ```
 
 ```ts
-import { CAPACITOR_SQLITE_DRIVER } from '@derme302/ionic-storage-capacitorsqlitedriver';
+import { CAPACITOR_SQLITE_DRIVER } from '@derme302/localforage-capacitorsqlitedriver';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -23,7 +23,7 @@ Then use `Storage` as usual.
 
 ```ts
 import { Storage } from '@ionic/storage-angular';
-import { SQLiteDriver } from '@derme302/ionic-storage-capacitorsqlitedriver';
+import { SQLiteDriver } from '@derme302/localforage-capacitorsqlitedriver';
 
 export class StorageService {
   public isReady: boolean = false;
