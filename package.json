@@ -1,6 +1,6 @@
 {
   "name": "@derme302/localforage-capacitorsqlitedriver",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Custom Ionic Storage driver using @capacitor-community/sqlite",
   "type": "module",
   "main": "dist/SQLiteDriver.js",
