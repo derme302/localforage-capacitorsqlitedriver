@@ -4,14 +4,23 @@
   "description": "Custom Ionic Storage driver using @capacitor-community/sqlite",
   "type": "module",
   "main": "dist/SQLiteDriver.js",
+  "module": "dist/SQLiteDriver.js",
   "types": "dist/SQLiteDriver.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/SQLiteDriver.js"
-    }
+      "import": "./dist/SQLiteDriver.js",
+      "require": "./dist/cjs/SQLiteDriver.js"
+    },
+    "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "dist/cjs"
+  ],
   "scripts": {
-    "build": "tsc"
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs"
   },
   "author": "derme302",
   "license": "MIT",
