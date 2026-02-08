@@ -2,7 +2,9 @@
   "name": "@derme302/localforage-capacitorsqlitedriver",
   "version": "1.3.0",
   "description": "Custom Ionic Storage driver using @capacitor-community/sqlite",
-  "url": "https://github.com/derme302/localforage-capacitorsqlitedriver",
+  "repository": {
+    "url": "https://github.com/derme302/localforage-capacitorsqlitedriver"
+  },
   "type": "module",
   "main": "dist/SQLiteDriver.js",
   "module": "dist/SQLiteDriver.js",
